@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /var/www/html
+
+php artisan swoole:http start
