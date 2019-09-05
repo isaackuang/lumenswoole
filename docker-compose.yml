@@ -8,3 +8,8 @@ services:
       - 8000:8000
     volumes:
       - ./lumen:/var/www/html
+      - ./sysconfig:/etc/sysconfig
+  redis:
+    image: isaackuang/redis:5.0.4
+    ports:
+      - 6379:6379

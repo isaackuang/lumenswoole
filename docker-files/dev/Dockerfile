@@ -1,4 +1,4 @@
-FROM isaackuang/swoole:4.4.4.1
+FROM isaackuang/swoole:4.4.5.1-wcp
 
 RUN apk --no-cache --progress add \
     php7-json@php php7-tokenizer@php php7-mbstring@php \

@@ -18,3 +18,16 @@ $router->get('/', function () use ($router) {
 $router->get('/hello', function () {
     return "HelloWorld";
 });
+
+$router->get('/redis', function () {
+    $obj = new redisProxy();
+    $rs = $obj->connect("redis");
+    $obj->select(0);
+    $obj->incr("test");
+    $result = [
+        'test' => $obj->get("test")
+    ];
+    $obj->release();
+
+    return response($result);
+});
