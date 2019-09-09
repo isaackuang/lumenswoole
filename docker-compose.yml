@@ -13,3 +13,7 @@ services:
     image: isaackuang/redis:5.0.4
     ports:
       - 6379:6379
+  postgre:
+    image: isaackuang/postgres
+    ports:
+      - 5432:5432

@@ -31,3 +31,14 @@ $router->get('/redis', function () {
 
     return response($result);
 });
+
+$router->get('/postgres', function () {
+    $obj = new pdoProxy("pgsql:host=postgre;port=5432;dbname=db","postgres","");
+    $obj->query("INSERT INTO hello(name) VALUES('Isaac')");
+    $rs = $obj->query("SELECT count(*) FROM hello");
+    $obj->release();
+        
+    $result = $rs->fetchAll();
+
+    return response($result);
+});
